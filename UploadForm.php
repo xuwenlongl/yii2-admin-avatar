@@ -69,21 +69,19 @@ class UploadForm extends Model
 
   }
 
-  private function mkDirs($dir)
-  {
-    if (is_dir($dir)) {  //如果目录存在删除目录
-      removeDir($dir);
+  private function mkDirs($dir){
+    	
+    if(!is_dir($dir)){
+      
+        if(!$this->mkDirs(dirname($dir))){
+            return false;
+        }
+        if(!mkdir($dir,0777)){
+            return false;
+        }
     }
-
-    if (!$this->mkDirs(dirname($dir))) {
-      return false;
-    }
-    if (!mkdir($dir, 0777)) {
-      return false;
-    }
-
     return true;
-  }
+}
 
   /**
    * bool imagecopyresampled ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )
