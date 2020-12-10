@@ -1,0 +1,21 @@
+{
+    "name": "xwl/yii2-avatar",
+    "description": "基于hyii2/yii-avatar,修改的符合自己习惯的包",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","avatar"],
+    "license": "BSD-4-Clause",
+    "authors": [
+        {
+            "name": "Xwl",
+            "email": "3131880168@qq.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "xwl\\avatar\\": ""
+        }
+    }
+}
